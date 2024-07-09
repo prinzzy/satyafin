@@ -1,85 +1,59 @@
-<header class='mb-3'>
-    <nav class="navbar navbar-expand navbar-light ">
-        <div class="container-fluid">
-            <a href="#" class="burger-btn d-block">
-                <i class="bi bi-justify fs-3"></i>
-            </a>
+<!DOCTYPE html>
+<html lang="en">
 
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
-                data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
-                aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
-                    <li class="nav-item dropdown me-1">
-                        <a class="nav-link active dropdown-toggle" href="#" data-bs-toggle="dropdown"
-                            aria-expanded="false">
-                            <i class='bi bi-envelope bi-sub fs-4 text-gray-600'></i>
-                        </a>
-                        <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="dropdownMenuButton">
-                            <li>
-                                <h6 class="dropdown-header">Mail</h6>
-                            </li>
-                            <li><a class="dropdown-item" href="#">No new mail</a></li>
-                        </ul>
-                    </li>
-                    <li class="nav-item dropdown me-3">
-                        <a class="nav-link active dropdown-toggle" href="#" data-bs-toggle="dropdown"
-                            aria-expanded="false">
-                            <i class='bi bi-bell bi-sub fs-4 text-gray-600'></i>
-                        </a>
-                        <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="dropdownMenuButton">
-                            <li>
-                                <h6 class="dropdown-header">Notifications</h6>
-                            </li>
-                            <li><a class="dropdown-item">No notification available</a></li>
-                        </ul>
-                    </li>
-                </ul>
-                <div class="dropdown">
-                    <a href="#" data-bs-toggle="dropdown" aria-expanded="false">
-                        <div class="user-menu d-flex">
-                            <div class="user-name text-end me-3">
-                                <h6 class="mb-0 text-gray-600">{{ Auth::user()->name }}</h6>
-                                <p class="mb-0 text-sm text-success">Online</p>
-                            </div>
-                            <div class="user-img d-flex align-items-center">
-                                <div class="avatar avatar-md">
-                                    <img src="{{ Auth::user()->profile_photo_url }}">
-                                </div>
-                            </div>
-                        </div>
-                    </a>
-                    <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="dropdownMenuButton">
-                        <li>
-                            <h6 class="dropdown-header">Hello, {{ strtok(Auth::user()->name, " ") }}!</h6>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Navbar Example</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/5.1.3/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{{ asset('css/styleheader.css') }}">
+</head>
+
+<body>
+    <header id="header" class="fixed-top">
+
+        <nav class="navbar navbar-expand-lg navbar-light">
+            <div class="container d-flex align-items-center justify-content-between">
+                <a class="navbar-brand" href="#">
+                    <img src="{{ asset('images/logo/satyafin.png') }}" alt="Logo">
+                    <span class="logo-text">Satya</span>
+                </a>
+                <div class="collapse navbar-collapse justify-content-center" id="navbarNav">
+                    <ul class="navbar-nav">
+                        <li class="nav-item">
+                            <a class="nav-link active" aria-current="page" href="#">Beranda</a>
                         </li>
-                        <li><a class="dropdown-item" href="{{ route('profile.show') }}"><i class="icon-mid bi bi-person me-2"></i> My
-                                Profile</a></li>
-                        @if (Laravel\Jetstream\Jetstream::hasApiFeatures())
-                        <li>
-                            <a class="dropdown-item" href="#"><i class="icon-mid bi bi-gear me-2"></i>
-                            {{ __('API Tokens') }}
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Tentang Kami</a>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" id="servicesDropdown" role="button"
+                                data-bs-toggle="dropdown" aria-expanded="false">
+                                Layanan
                             </a>
+                            <ul class="dropdown-menu" aria-labelledby="servicesDropdown">
+                                <li><a class="dropdown-item" href="#">Service 1</a></li>
+                                <li><a class="dropdown-item" href="#">Service 2</a></li>
+                                <li><a class="dropdown-item" href="#">Service 3</a></li>
+                            </ul>
                         </li>
-                        @endif
-                        <li>
-                            <hr class="dropdown-divider">
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Karir</a>
                         </li>
-
-                            <li>
-                                <a class="dropdown-item" href="{{ route('logout') }}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
-                                    <i class="icon-mid bi bi-box-arrow-left me-2"></i>
-                                    {{ __('Logout') }}
-                                </a>    
-                                <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
-                                    @csrf
-                                </form>
-                            </li>
                     </ul>
                 </div>
+                <div class="d-flex">
+                    <a href="#" class="btn">Hubungi Kami</a>
+                </div>
             </div>
-        </div>
-    </nav>
-</header>
+        </nav>
+    </header>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="{{ asset('js/script.js') }}"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/5.1.3/js/bootstrap.min.js"></script>
+</body>
+
+</html>
