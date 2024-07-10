@@ -8,11 +8,12 @@
     <link href="https://stackpath.bootstrapcdn.com/bootstrap/5.1.3/css/bootstrap.min.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="{{ asset('css/stylefooter.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/animation.css') }}">
 </head>
 
 <body>
     <footer class="footer">
-        <div class="footer-content container">
+        <div class="footer-content container animate-zoomin">
             <div class="footer-left">
                 <div class="footer-logo">
                     <img src="{{ asset('images/logo/satyafin.png') }}" alt="Satya">

@@ -5,13 +5,15 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Navbar Example</title>
-    <link href="https://stackpath.bootstrapcdn.com/bootstrap/5.1.3/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="{{ asset('css/styleheader.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/animation.css') }}">
 </head>
 
 <body>
-    <header id="header" class="fixed-top">
+    <header id="header" class="fixed-top animate-zoomin">
 
         <nav class="navbar navbar-expand-lg navbar-light">
             <div class="container d-flex align-items-center justify-content-between">
@@ -22,14 +24,14 @@
                 <div class="collapse navbar-collapse justify-content-center" id="navbarNav">
                     <ul class="navbar-nav">
                         <li class="nav-item">
-                            <a class="nav-link active {{ request()->routeIs('dashboard') ? 'active' : '' }}"
+                            <a class="nav-link {{ request()->routeIs('dashboard') ? 'active' : '' }}"
                                 aria-current="page" href="{{ route('dashboard') }}">Home</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" href="#">About Us</a>
                         </li>
                         <li class="nav-item dropdown ">
-                            <a class="nav-link dropdown-toggle {{ request()->routeIs('layanan') ? 'active' : '' }}"
+                            <a class="nav-link dropdown-toggle {{ request()->is('layanan*') || request()->routeIs('consulting') || request()->routeIs('flowchart') || request()->routeIs('report') ? 'active' : '' }}"
                                 href="{{ route('layanan') }}" id="servicesDropdown" role="button"
                                 data-bs-toggle="dropdown" aria-expanded="false">
                                 Services
@@ -59,8 +61,8 @@
         </nav>
     </header>
 
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="{{ asset('js/script.js') }}"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/5.1.3/js/bootstrap.min.js"></script>
 </body>
