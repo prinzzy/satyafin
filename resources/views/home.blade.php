@@ -16,55 +16,37 @@
     <main>
         <div class="hero-section">
             <div class="hero-text">
-                <h1>Financial Consultants and Business Solutions</h1>
-                <p>"Optimizing Investment"<br>
-                    "Maximizing Potential"<br>
+                <h1>Financial Consultants & Business Solutions</h1>
+                <p>
                     "Your Trust, Our Priority"<br>
+                    "Optimizing Investment, Maximizing Potential"<br>
                     "Controlled Finance, Rapidly Growing Business"
                 </p>
             </div>
         </div>
         <div class="container">
             <div class="text">
-                <h1>Your Trust Are Our Priority</h1>
-                <p>technological and market developments require companies to remain adaptive and responsive. Challenges such as market fluctuations, global competition, and increasingly complex regulations add to the complexity of proper financial, operational, and standard operating procedure management. Many companies also lack internal resources or specific expertise in financial management, strategic planning, data analysis, or business development. This is where financial consultants and business solutions like SFinBusinessSolution can add value to your business.</p>
+                <h1>
+                    Financial Consultants & Business Solutions helps you in
+                    various aspects of finance and business
+                </h1>
+                <p>Technological and market developments are demanding
+                    company to remain adaptive and responsive.
+                    Challenges such as market fluctuations, competition
+                    global, and increasingly complex regulations
+                    increase the complexity of financial management,
+                    operations, and standard operating procedures
+                    the good one. Many companies are also lacking
+                    internal resources or specialized expertise
+                    in financial management, strategic planning,
+                    data analysis, or business development.
+                    This is where financial consultants and business solutions come in
+                    like SFinBusinessSolution can provide value
+                    add to your business.</p>
             </div>
             <div class="image"><img src="{{ asset('images/bisnis3.png') }}" alt="financialconsulting"></div>
         </div>
-        <footer class="footer">
-            <div class="footer-content container">
-                <div class="footer-left">
-                    <div class="footer-logo">
-                        <img src="{{ asset('images/logo/satyafin.png') }}" alt="Satya">
-                        <span class="logo-text">Satya</span>
-                    </div>
-                    <p>Financial Business Solutions menyediakan jasa perencanaan
-                        bisnis, implementasi strategi bisnis, analisis kebijakan, serta
-                        konsultasi keuangan perusahaan untuk menghasilkan strategi yang
-                        sesuai pada bisnis anda.
-                    </p>
-                    <div class="footer-social">
-                        <a href="#"><i class="bi bi-envelope"></i></a>
-                    </div>
-                </div>
-                <div class="footer-right">
-                    <nav class="footer-nav">
-                        <a href="#">Beranda</a>
-                        <a href="#">Tentang Kami</a>
-                        <a href="#">Layanan</a>
-                        <a href="#">Karir</a>
-                    </nav>
-                    <div class="footer-newsletter">
-                        <h2>Ikuti Berita Terbaru Kami</h2>
-                        <p>Perluas wawasan anda dengan artikel kami</p>
-                        <form action="#">
-                            <input type="email" placeholder="Alamat Email" required>
-                            <input type="submit" value="KIRIM">
-                        </form>
-                    </div>
-                </div>
-            </div>
-        </footer>
+        @include('layouts.partials.footer')
     </main>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 </body>
