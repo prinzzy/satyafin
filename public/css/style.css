@@ -6,7 +6,7 @@ html {
 }
 
 .hero-section {
-    background-image: url("../images/bg11.png");
+    background-image: url("../images/bg14.png");
     background-position: center;
     background-size: cover;
     display: flex;
@@ -18,7 +18,7 @@ html {
 }
 
 .hero-text {
-    max-width: 800px;
+    max-width: 1000px;
 }
 
 .hero-text h1 {
@@ -49,108 +49,4 @@ html {
     max-width: 100%;
     height: auto;
     margin-top: 20px;
-}
-
-.footer {
-    background-color: #b13b00;
-    padding: 40px;
-    color: #ffffff;
-}
-
-.footer-content {
-    display: flex;
-    justify-content: space-between;
-    align-items: flex-start;
-    flex-wrap: wrap;
-}
-
-.footer-left {
-    max-width: 50%;
-    text-align: justify;
-}
-
-.footer-logo img {
-    width: 80px;
-    height: 65px;
-    margin: 0 10px;
-    margin-bottom: 20px;
-}
-
-.footer-social a {
-    color: #ffffff;
-    font-size: 24px;
-    margin-right: 10px;
-}
-
-.footer-social img {
-    width: 40px;
-    height: 35px;
-}
-
-.logo-text {
-    font-size: 24px;
-    color: white;
-    text-decoration: none;
-    font-weight: bold;
-    font-family: "Monserrat", sans-serif;
-}
-
-.footer-right {
-    max-width: 50%;
-    text-align: left;
-}
-
-.footer-nav {
-    border-bottom: 2px solid white;
-    margin-bottom: 20px;
-}
-
-.footer-nav a {
-    color: #ffffff;
-    text-decoration: none;
-    margin: 0 10px;
-    font-size: 16px;
-}
-
-.footer-newsletter {
-    margin-top: 20px;
-    text-align: left;
-}
-
-.footer-newsletter input[type="email"] {
-    padding: 10px;
-    width: 250px;
-    border: none;
-    border-radius: 5px;
-    margin-right: 10px;
-    -webkit-border-radius: 5px;
-    -moz-border-radius: 5px;
-    -ms-border-radius: 5px;
-    -o-border-radius: 5px;
-}
-
-.footer-newsletter input[type="submit"] {
-    padding: 10px 20px;
-    border: 2px solid white;
-    border-radius: 5px;
-    background-color: transparent;
-    color: white;
-    font-size: 16px;
-    cursor: pointer;
-    -webkit-border-radius: 5px;
-    -moz-border-radius: 5px;
-    -ms-border-radius: 5px;
-    -o-border-radius: 5px;
-}
-.footer-newsletter input[type="submit"]:hover {
-    padding: 10px 20px;
-    border-radius: 5px;
-    background-color: white;
-    color: black;
-    font-size: 16px;
-    cursor: pointer;
-    -webkit-border-radius: 5px;
-    -moz-border-radius: 5px;
-    -ms-border-radius: 5px;
-    -o-border-radius: 5px;
 }

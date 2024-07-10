@@ -15,36 +15,45 @@
 
         <nav class="navbar navbar-expand-lg navbar-light">
             <div class="container d-flex align-items-center justify-content-between">
-                <a class="navbar-brand" href="#">
+                <a class="navbar-brand" href="{{ route('dashboard') }}">
                     <img src="{{ asset('images/logo/satyafin.png') }}" alt="Logo">
                     <span class="logo-text">Satya</span>
                 </a>
                 <div class="collapse navbar-collapse justify-content-center" id="navbarNav">
                     <ul class="navbar-nav">
                         <li class="nav-item">
-                            <a class="nav-link active" aria-current="page" href="#">Beranda</a>
+                            <a class="nav-link active {{ request()->routeIs('dashboard') ? 'active' : '' }}"
+                                aria-current="page" href="{{ route('dashboard') }}">Home</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="#">Tentang Kami</a>
+                            <a class="nav-link" href="#">About Us</a>
                         </li>
-                        <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle" href="#" id="servicesDropdown" role="button"
+                        <li class="nav-item dropdown ">
+                            <a class="nav-link dropdown-toggle {{ request()->routeIs('layanan') ? 'active' : '' }}"
+                                href="{{ route('layanan') }}" id="servicesDropdown" role="button"
                                 data-bs-toggle="dropdown" aria-expanded="false">
-                                Layanan
+                                Services
                             </a>
                             <ul class="dropdown-menu" aria-labelledby="servicesDropdown">
-                                <li><a class="dropdown-item" href="#">Service 1</a></li>
-                                <li><a class="dropdown-item" href="#">Service 2</a></li>
-                                <li><a class="dropdown-item" href="#">Service 3</a></li>
+                                <li><a class="dropdown-item" href="{{ route('consulting') }}">Financial & Management
+                                        Consulting</a></li>
+                                <li><a class="dropdown-item" href="{{ route('flowchart') }}">Business Process FlowChart
+                                        SOP</a></li>
+                                <li><a class="dropdown-item" href="{{ route('report') }}">Financial Report Template</a>
+                                </li>
+                                <li>
+                                    <hr class="dropdown-divider">
+                                </li>
+                                <li><a class="dropdown-item" href="{{ route('layanan') }}">All Services</a></li>
                             </ul>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="#">Karir</a>
+                            <a class="nav-link" href="#">Career</a>
                         </li>
                     </ul>
                 </div>
                 <div class="d-flex">
-                    <a href="#" class="btn">Hubungi Kami</a>
+                    <a href="#" class="btn">Contact Us</a>
                 </div>
             </div>
         </nav>
