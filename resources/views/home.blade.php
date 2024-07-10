@@ -16,28 +16,18 @@
     <main>
         <div class="hero-section">
             <div class="hero-text">
-                <h1>Financial Business Solutions</h1>
-                <p>Financial Business Solutions merupakan layanan yang dapat membantu anda terkait
-                    manajemen finansial dan transaksi untuk memudahkan bisnis anda.
+                <h1>Financial Consultants and Business Solutions</h1>
+                <p>"Optimizing Investment"<br>
+                    "Maximizing Potential"<br>
+                    "Your Trust, Our Priority"<br>
+                    "Controlled Finance, Rapidly Growing Business"
                 </p>
             </div>
         </div>
         <div class="container">
             <div class="text">
-                <h1>Kepercayaan Anda, Prioritas Kami</h1>
-                <p>Perkembangan teknologi dan pasar menuntut
-                    perusahaan untuk tetap adaptif dan responsif.
-                    Tantangan seperti fluktuasi pasar, persaingan
-                    global, dan peraturan yang semakin kompleks
-                    menambah kompleksitas pengelolaan keuangan,
-                    operasional, dan prosedur operasional standar
-                    yang baik. Banyak perusahaan juga kekurangan
-                    sumber daya internal atau keahlian khusus
-                    dalam manajemen keuangan, perencanaan strategis,
-                    analisis data, atau pengembangan bisnis.
-                    Di sinilah konsultan keuangan dan solusi bisnis
-                    seperti SFinBusinessSolution dapat memberikan nilai
-                    tambah pada bisnis Anda.</p>
+                <h1>Your Trust Are Our Priority</h1>
+                <p>technological and market developments require companies to remain adaptive and responsive. Challenges such as market fluctuations, global competition, and increasingly complex regulations add to the complexity of proper financial, operational, and standard operating procedure management. Many companies also lack internal resources or specific expertise in financial management, strategic planning, data analysis, or business development. This is where financial consultants and business solutions like SFinBusinessSolution can add value to your business.</p>
             </div>
             <div class="image"><img src="{{ asset('images/bisnis3.png') }}" alt="financialconsulting"></div>
         </div>
