@@ -29,3 +29,15 @@ Route::group(['middleware' => ['auth:sanctum', 'verified']], function () {
         })->name('accordion');
     });
 });
+Route::get('/layanan', function () {
+    return view('layanan.layanan');
+})->name('layanan');
+Route::get('/consulting', function () {
+    return view('layanan.consulting');
+})->name('consulting');
+Route::get('/flowchart', function () {
+    return view('layanan.flowchart');
+})->name('flowchart');
+Route::get('/report', function () {
+    return view('layanan.report');
+})->name('report');

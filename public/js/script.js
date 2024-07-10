@@ -1,12 +1,21 @@
 document.addEventListener("DOMContentLoaded", function () {
-    var navLinks = document.querySelectorAll(".nav-link");
+    var navLinks = document.querySelectorAll(".nav-link, .dropdown-item");
 
     navLinks.forEach(function (link) {
         link.addEventListener("click", function () {
-            navLinks.forEach(function (nav) {
-                nav.classList.remove("active");
+            // Remove active class from all nav links
+            navLinks.forEach(function (link) {
+                link.classList.remove("active");
             });
-            this.classList.add("active");
+
+            // Add active class to the clicked link or its parent nav-link if it's a dropdown item
+            if (this.classList.contains("dropdown-item")) {
+                this.closest(".nav-item.dropdown")
+                    .querySelector(".nav-link")
+                    .classList.add("active");
+            } else {
+                this.classList.add("active");
+            }
         });
     });
 });
