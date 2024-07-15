@@ -93,3 +93,111 @@
     -ms-transform: translateY(-3px);
     -o-transform: translateY(-3px);
 }
+
+.container-card {
+    max-width: 600px;
+    margin: 30px auto;
+    padding: 20px;
+}
+
+.custom-card {
+    border: none;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    background-color: #ffffff;
+}
+
+.card-title {
+    position: relative;
+    margin-bottom: 20px;
+    font-size: 1.25rem;
+    font-weight: 600;
+    text-align: center;
+}
+
+.card-title::after {
+    content: "";
+    position: absolute;
+    width: 40%;
+    height: 2px;
+    background-color: #ff6200;
+    bottom: -10px;
+    left: 30%;
+}
+
+.card-body {
+    padding: 30px;
+}
+
+.details-group {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 15px;
+    margin: 20px;
+}
+
+.details-group strong {
+    flex: 1;
+    font-weight: 600;
+}
+
+.details-group span {
+    flex: 2;
+    text-align: right;
+}
+
+.bank-info,
+.upload-section {
+    margin-top: 20px;
+}
+
+.btn-primary-custom {
+    background-color: #007bff;
+    border-color: #007bff;
+    color: #fff;
+    width: 100%;
+    padding: 10px;
+    border-radius: 5px;
+    font-size: 16px;
+    transition: background-color 0.3s;
+}
+
+.btn-primary-custom:hover {
+    background-color: #0056b3;
+}
+
+input[type="file"] {
+    padding: 10px;
+    border: 1px solid #ced4da;
+    border-radius: 20px;
+    width: 100%;
+    margin-top: 20px;
+    -webkit-border-radius: 20px;
+    -moz-border-radius: 20px;
+    -ms-border-radius: 20px;
+    -o-border-radius: 20px;
+}
+
+.custom-alert {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #fff;
+    border: 1px solid #ced4da;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    max-width: 300px;
+    text-align: center;
+    display: none;
+}
+
+.btn-ok {
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 10px;
+}
