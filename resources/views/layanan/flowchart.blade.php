@@ -48,7 +48,7 @@
                                     aria-label="Close"></button>
                             </div>
                             <div class="modal-body">
-                                <form>
+                                <form id="sopform">
                                     <div class="mb-3">
                                         <label for="package" class="form-label">Select Package</label>
                                         <select class="form-select" id="package" required>
@@ -110,6 +110,33 @@
                 priceContainer.style.display = 'block';
             } else {
                 priceContainer.style.display = 'none';
+            }
+        });
+
+        document.getElementById('sopform').addEventListener('submit', function(event) {
+            event.preventDefault();
+            // Validasi form jika diperlukan
+            if (this.checkValidity()) {
+                // Ambil nilai dari form
+                const packageName = document.getElementById('package').value;
+                const price = document.getElementById('price').value;
+                const name = document.getElementById('name').value;
+                const email = document.getElementById('email').value;
+                const phone = document.getElementById('phone').value;
+
+                const packageMap = {
+                    'paket1': 'Retail Company',
+                    'paket2': 'Service Company',
+                    'paket3': 'Manufacture Company',
+                    'paket4': 'All Business Process FlowChart SOP'
+                }
+
+                // Buat URL dengan query parameters
+                const paymentUrl =
+                    `{{ route('pembayaran') }}?package=${encodeURIComponent(packageMap[packageName])}&price=${encodeURIComponent(price)}&name=${encodeURIComponent(name)}&email=${encodeURIComponent(email)}&phone=${encodeURIComponent(phone)}`;
+
+                // Arahkan ke halaman pembayaran
+                window.location.href = paymentUrl;
             }
         });
     </script>

@@ -41,3 +41,6 @@ Route::get('/flowchart', function () {
 Route::get('/report', function () {
     return view('layanan.report');
 })->name('report');
+Route::get('/pembayaran', function () {
+    return view('layanan.pembayaran');
+})->name('pembayaran');
