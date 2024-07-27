@@ -37,19 +37,27 @@
                     expertise and support needed to navigate the complexities of
                     financial and managerial challenges.
                 </p>
-                <button type="button" class="btn-button animate-zoomin" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                <button type="button" class="btn-button animate-zoomin" data-bs-toggle="modal"
+                    data-bs-target="#exampleModal">
                     Select Package
                 </button>
-                <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel"
+                    aria-hidden="true">
                     <div class="modal-dialog">
                         <div class="modal-content">
                             <div class="modal-header">
                                 <h5 class="modal-title" id="exampleModalLabel">Financial & Management Consulting Package
                                 </h5>
-                                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                    aria-label="Close"></button>
                             </div>
                             <div class="modal-body">
                                 <form id="consultingform">
+                                    <div class="mb-3">
+                                        <label for="name" class="form-label">Product</label>
+                                        <input type="text" class="form-control"
+                                            value="Financial & Management Consultings" id="product" readonly>
+                                    </div>
                                     <div class="mb-3">
                                         <label for="package" class="form-label">Select Package</label>
                                         <select class="form-select" id="package" required>
@@ -76,7 +84,7 @@
                                         <input type="tel" class="form-control" id="phone" required>
                                     </div>
                                     <div class="mb-3">
-                                        <label for="notes" class="form-label">Catatan (optional)</label>
+                                        <label for="notes" class="form-label">Notes (optional)</label>
                                         <textarea class="form-control" id="notes" rows="3"></textarea>
                                     </div>
                                     <button type="submit" class="btn-button">Submit</button>
@@ -86,7 +94,8 @@
                     </div>
                 </div>
             </div>
-            <div class="image animate-zoomin"><img src="{{ asset('images/consulting3.png') }}" alt="financialconsulting">
+            <div class="image animate-zoomin"><img src="{{ asset('images/consulting3.png') }}"
+                    alt="financialconsulting">
             </div>
         </div>
     </main>
@@ -120,6 +129,7 @@
             // Ambil nilai dari form
             const packageName = document.getElementById('package').value;
             const price = document.getElementById('price').value;
+            const product = document.getElementById('product').value;
             const name = document.getElementById('name').value;
             const email = document.getElementById('email').value;
             const phone = document.getElementById('phone').value;
@@ -133,7 +143,7 @@
 
             // Buat URL dengan query parameters
             let paymentUrl =
-                `{{ route('pembayaran') }}?package=${encodeURIComponent(packageMap[packageName])}&price=${encodeURIComponent(price)}&name=${encodeURIComponent(name)}&email=${encodeURIComponent(email)}&phone=${encodeURIComponent(phone)}`;
+                `{{ route('pembayaran') }}?product=${encodeURIComponent(product)}&package=${encodeURIComponent(packageMap[packageName])}&price=${encodeURIComponent(price)}&name=${encodeURIComponent(name)}&email=${encodeURIComponent(email)}&phone=${encodeURIComponent(phone)}`;
 
             // Sertakan Catatan jika ada nilai yang dimasukkan
             if (notes.trim() !== '') {

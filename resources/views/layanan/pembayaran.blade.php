@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Payment</title>
+    <title>Payment Details</title>
     <link rel="stylesheet" href="{{ asset('css/styleconsulting.css') }}">
     <link rel="stylesheet" href="{{ asset('css/animation.css') }}">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
@@ -26,25 +26,29 @@
                 <div class="card-body">
                     <h5 class="card-title">Personal Details</h5>
                     <div class="details-group">
-                        <strong>Name:</strong>
+                        <strong>Name</strong>
                         <span id="name"></span>
                     </div>
                     <div class="details-group">
-                        <strong>Email:</strong>
+                        <strong>Email</strong>
                         <span id="email"></span>
                     </div>
                     <div class="details-group">
-                        <strong>Phone:</strong>
+                        <strong>Phone</strong>
                         <span id="phone"></span>
                     </div>
 
                     <h5 class="card-title">Package Details</h5>
                     <div class="details-group">
+                        <strong>Product:</strong>
+                        <span id="product"></span>
+                    </div>
+                    <div class="details-group">
                         <strong>Package:</strong>
                         <span id="package"></span>
                     </div>
                     <div class="details-group">
-                        <strong>Catatan:</strong>
+                        <strong>Notes:</strong>
                         <span id="notes"></span>
                     </div>
                     <div class="details-group">
@@ -59,7 +63,8 @@
                     <h5 class="card-title">Payment Method</h5>
                     <div class="mb-3">
                         <label class="form-check">
-                            <input class="form-check-input" type="radio" name="paymentMethod" id="bankTransfer" checked>
+                            <input class="form-check-input" type="radio" name="paymentMethod" id="bankTransfer"
+                                checked>
                             <span class="form-check-label">Bank Transfer</span>
                         </label>
                     </div>
@@ -79,6 +84,7 @@
             <input type="hidden" name="package" id="hiddenPackage">
             <input type="hidden" name="price" id="hiddenPrice">
             <input type="hidden" name="name" id="hiddenName">
+            <input type="hidden" name="product" id="hiddenProduct">
             <input type="hidden" name="email" id="hiddenEmail">
             <input type="hidden" name="phone" id="hiddenPhone">
             <input type="hidden" name="notes" id="hiddenNotes">
@@ -92,6 +98,7 @@
         const urlParams = new URLSearchParams(window.location.search);
         const packageName = urlParams.get('package');
         const priceString = urlParams.get('price');
+        const product = urlParams.get('product');
         const name = urlParams.get('name');
         const email = urlParams.get('email');
         const phone = urlParams.get('phone');
@@ -119,6 +126,7 @@
         document.getElementById('package').textContent = packageName;
         document.getElementById('price').textContent = formatCurrency(price);
         document.getElementById('grandTotal').textContent = formatCurrency(grandTotal);
+        document.getElementById('product').textContent = product;
         document.getElementById('name').textContent = name;
         document.getElementById('email').textContent = email;
         document.getElementById('phone').textContent = phone;
@@ -130,6 +138,7 @@
 
         document.getElementById('hiddenPackage').value = packageName;
         document.getElementById('hiddenPrice').value = priceString;
+        document.getElementById('hiddenProduct').value = product;
         document.getElementById('hiddenName').value = name;
         document.getElementById('hiddenEmail').value = email;
         document.getElementById('hiddenPhone').value = phone;
