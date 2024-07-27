@@ -26,34 +26,38 @@
                 <div class="card-body">
                     <h5 class="card-title">Package Details</h5>
                     <div class="details-group">
-                        <strong>Package:</strong>
+                        <strong>Package</strong>
                         <span id="package"></span>
                     </div>
                     <div class="details-group">
-                        <strong>Price:</strong>
+                        <strong>Price</strong>
                         <span id="price"></span>
                     </div>
                     <h5 class="card-title">Personal Details</h5>
                     <div class="details-group">
-                        <strong>Name:</strong>
+                        <strong>Name</strong>
                         <span id="name"></span>
                     </div>
                     <div class="details-group">
-                        <strong>Email:</strong>
+                        <strong>Email</strong>
                         <span id="email"></span>
                     </div>
                     <div class="details-group">
-                        <strong>Phone:</strong>
+                        <strong>Phone</strong>
                         <span id="phone"></span>
                     </div>
                     <h5 class="card-title bank-info">Bank Information</h5>
                     <div class="details-group">
-                        <strong>Bank:</strong>
-                        <span>Bank ABC</span>
+                        <strong>Name</strong>
+                        <span>SATYA PRATAMA GUNA</span>
                     </div>
                     <div class="details-group">
-                        <strong>Account Number:</strong>
-                        <span>1234567890</span>
+                        <strong>Bank</strong>
+                        <span>BRI</span>
+                    </div>
+                    <div class="details-group">
+                        <strong>Account Number</strong>
+                        <span>032901006075306</span>
                     </div>
                     <h5 class="card-title upload-section">Upload Payment Proof</h5>
                     <div class="mb-3">
@@ -65,8 +69,8 @@
         </div>
 
         <div class="custom-alert" id="customAlert">
-            <p>Terimakasih sudah memilih jasa kami, kami akan mengirimkan pesan ke email anda.</p>
-            <button class="btn-button" onclick="window.location.href = '{{ route('dashboard') }}'">OK</button>
+            <p>Thank you for choosing our services, we will send a message to your email.</p>
+            <button class="btn-button" onclick="window.location.href = '{{ route('dashboard') }}'">Ok</button>
         </div>
     </main>
     @include('layouts.partials.footer')
@@ -95,7 +99,7 @@
                 document.getElementById('customAlert').style.display = 'block';
             } else {
                 // Jika belum upload bukti pembayaran, beri notifikasi
-                alert("Silakan upload bukti pembayaran terlebih dahulu.");
+                alert("Please upload proof of payment first.");
             }
         });
     </script>
