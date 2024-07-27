@@ -27,15 +27,15 @@
                     <h5 class="card-title">Transfer to the following bank account:</h5>
                     <div class="details-group">
                         <strong>Bank Name:</strong>
-                        <span>Your Bank Name</span>
+                        <span>BRI</span>
                     </div>
                     <div class="details-group">
                         <strong>Account Number:</strong>
-                        <span>Your Account Number</span>
+                        <span>032901006075306</span>
                     </div>
                     <div class="details-group">
                         <strong>Account Name:</strong>
-                        <span>Your Account Name</span>
+                        <span>SATYA PRATAMA GUNA</span>
                     </div>
                     <div class="details-group">
                         <strong>Grand Total:</strong>
@@ -47,28 +47,32 @@
                     </div>
 
                     <!-- Button to open upload proof modal -->
-                    <button type="button" class="btn btn-primary mt-3" data-bs-toggle="modal" data-bs-target="#uploadProofModal">
-                        Sudah Transfer
+                    <button type="button" class="btn btn-primary mt-3" data-bs-toggle="modal"
+                        data-bs-target="#uploadProofModal">
+                        Submit
                     </button>
                 </div>
             </div>
         </div>
 
         <!-- Upload Proof Modal -->
-        <div class="modal fade" id="uploadProofModal" tabindex="-1" aria-labelledby="uploadProofModalLabel" aria-hidden="true">
+        <div class="modal fade" id="uploadProofModal" tabindex="-1" aria-labelledby="uploadProofModalLabel"
+            aria-hidden="true">
             <div class="modal-dialog">
                 <div class="modal-content">
                     <div class="modal-header">
-                        <h5 class="modal-title" id="uploadProofModalLabel">Upload Bukti Transfer</h5>
+                        <h5 class="modal-title" id="uploadProofModalLabel">Upload Proof of Transfer</h5>
                         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                     </div>
                     <div class="modal-body">
                         <form id="uploadProofForm" enctype="multipart/form-data">
                             <div class="mb-3">
-                                <label for="paymentProof" class="form-label">Pilih file bukti transfer:</label>
-                                <input type="file" class="form-control" id="paymentProof" name="paymentProof" required>
+                                <label for="paymentProof" class="form-label">Select proof of transfer file:</label>
+                                <input type="file" class="form-control" id="paymentProof" name="paymentProof"
+                                    required>
                                 <input type="hidden" name="package" value="{{ request('package') }}">
                                 <input type="hidden" name="price" value="{{ request('price') }}">
+                                <input type="hidden" name="product" value="{{ request('product') }}">
                                 <input type="hidden" name="name" value="{{ request('name') }}">
                                 <input type="hidden" name="email" value="{{ request('email') }}">
                                 <input type="hidden" name="phone" value="{{ request('phone') }}">
@@ -106,15 +110,15 @@
                 .then(data => {
                     if (data.status === 'success') {
                         Swal.fire({
-                            title: 'Bukti Transfer Berhasil Diunggah!',
-                            text: 'Invoice akan dikirim ke email Anda.',
+                            title: 'Proof of Transfer Successfully Uploaded!',
+                            text: 'Invoice will be sent to your email.',
                             icon: 'success',
                             showCancelButton: false,
-                            confirmButtonText: 'Kembali ke Home',
+                            confirmButtonText: 'Back To Home',
                             confirmButtonColor: '#3085d6',
                         }).then((result) => {
                             if (result.isConfirmed) {
-                                window.location.href = "{{ route('dashboard') }}";
+                                window.location.href = "{{ route('home') }}";
                             }
                         });
                     } else {
@@ -129,7 +133,7 @@
                 .catch(error => {
                     Swal.fire({
                         title: 'Error!',
-                        text: 'Terjadi kesalahan saat mengunggah bukti transfer.',
+                        text: 'An error occurred while uploading proof of transfer.',
                         icon: 'error',
                         confirmButtonText: 'OK'
                     });

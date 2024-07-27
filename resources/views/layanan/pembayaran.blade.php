@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Payment</title>
+    <title>Payment Details</title>
     <link rel="stylesheet" href="{{ asset('css/styleconsulting.css') }}">
     <link rel="stylesheet" href="{{ asset('css/animation.css') }}">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
@@ -39,6 +39,10 @@
                     </div>
 
                     <h5 class="card-title">Package Details</h5>
+                    <div class="details-group">
+                        <strong>Product:</strong>
+                        <span id="product"></span>
+                    </div>
                     <div class="details-group">
                         <strong>Package:</strong>
                         <span id="package"></span>
@@ -80,6 +84,7 @@
             <input type="hidden" name="package" id="hiddenPackage">
             <input type="hidden" name="price" id="hiddenPrice">
             <input type="hidden" name="name" id="hiddenName">
+            <input type="hidden" name="product" id="hiddenProduct">
             <input type="hidden" name="email" id="hiddenEmail">
             <input type="hidden" name="phone" id="hiddenPhone">
             <input type="hidden" name="notes" id="hiddenNotes">
@@ -93,6 +98,7 @@
         const urlParams = new URLSearchParams(window.location.search);
         const packageName = urlParams.get('package');
         const priceString = urlParams.get('price');
+        const product = urlParams.get('product');
         const name = urlParams.get('name');
         const email = urlParams.get('email');
         const phone = urlParams.get('phone');
@@ -120,6 +126,7 @@
         document.getElementById('package').textContent = packageName;
         document.getElementById('price').textContent = formatCurrency(price);
         document.getElementById('grandTotal').textContent = formatCurrency(grandTotal);
+        document.getElementById('product').textContent = product;
         document.getElementById('name').textContent = name;
         document.getElementById('email').textContent = email;
         document.getElementById('phone').textContent = phone;
@@ -131,6 +138,7 @@
 
         document.getElementById('hiddenPackage').value = packageName;
         document.getElementById('hiddenPrice').value = priceString;
+        document.getElementById('hiddenProduct').value = product;
         document.getElementById('hiddenName').value = name;
         document.getElementById('hiddenEmail').value = email;
         document.getElementById('hiddenPhone').value = phone;

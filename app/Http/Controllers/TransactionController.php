@@ -16,6 +16,7 @@ class TransactionController extends Controller
         ]);
 
 
+        $product = $request->input('product');
         $package = $request->input('package');
         $price = $this->formatCurrencyToDecimal($request->input('price'));
         $name = $request->input('name');
@@ -30,6 +31,7 @@ class TransactionController extends Controller
             $filePath = $file->storeAs('payment_proofs', $fileName, 'public');
 
             $transaction = new Transaction();
+            $transaction->product = $product;
             $transaction->package = $package;
             $transaction->price = $price;
             $transaction->name = $name;
