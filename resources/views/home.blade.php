@@ -13,7 +13,7 @@
 </head>
 
 <body>
-    @include('layouts.partials.header')
+    @include('layouts.partials.headercust')
     <main>
         <div class="hero-section">
             <div class="hero-text">
@@ -45,10 +45,9 @@
                     like SFinBusinessSolution can provide value
                     add to your business.</p>
             </div>
-            <div class="image"><img src="{{ asset('images/bisnis3.png') }}" alt="financialconsulting"
-                    class="animate-zoomin"></div>
+            <div class="image"><img src="{{ asset('images/bisnis3.png') }}" alt="financialconsulting" class="animate-zoomin"></div>
         </div>
-        @include('layouts.partials.footer')
+        @include('layouts.partials.footercust')
     </main>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 </body>

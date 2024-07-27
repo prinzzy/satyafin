@@ -1,8 +1,16 @@
 <x-guest-layout>
+    <style>
+        .custom-logo {
+            width: 400px !important;
+            /* Adjust the width as needed */
+            height: auto !important;
+            /* Maintain aspect ratio */
+        }
+    </style>
 
     <div id="auth-left">
-        <div class="auth-logo">
-            <a href="index.html"><img src="{{ asset('/images/logo/logo.png') }}" alt="Logo"></a>
+        <div class="logo">
+            <a href="/login"><img src="{{ asset('/images/logo/satyatext.png') }}" alt="Logo" class="custom-logo"></a>
         </div>
         <h1 class="auth-title">Log in.</h1>
         <p class="auth-subtitle mb-5">Log in with your data that you entered during registration.</p>
@@ -20,15 +28,13 @@
         <form action="{{ route('login') }}" method="POST">
             @csrf
             <div class="form-group position-relative has-icon-left mb-4">
-                <input class="form-control form-control-xl" type="email" name="email" placeholder="Email"
-                    value="{{ old('email') }}">
+                <input class="form-control form-control-xl" type="email" name="email" placeholder="Email" value="{{ old('email') }}">
                 <div class="form-control-icon">
                     <i class="bi bi-person"></i>
                 </div>
             </div>
             <div class="form-group position-relative has-icon-left mb-4">
-                <input type="password" class="form-control form-control-xl" name="password" placeholder="Password"
-                    placeholder="Password">
+                <input type="password" class="form-control form-control-xl" name="password" placeholder="Password" placeholder="Password">
                 <div class="form-control-icon">
                     <i class="bi bi-shield-lock"></i>
                 </div>

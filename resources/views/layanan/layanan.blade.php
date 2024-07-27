@@ -13,7 +13,7 @@
 </head>
 
 <body>
-    @include('layouts.partials.header')
+    @include('layouts.partials.headercust')
     <main>
         <div class="hero-section">
             <div class="hero-text">
@@ -26,8 +26,7 @@
                 <div class="row justify-content-center animate-zoomin">
                     <div class="col-md-4 service">
                         <div class="card">
-                            <img src="{{ asset('images/consulting1.png') }}" class="card-img-top"
-                                alt="Financial&ManagementConsulting">
+                            <img src="{{ asset('images/consulting1.png') }}" class="card-img-top" alt="Financial&ManagementConsulting">
                             <div class="card-body">
                                 <h5 class="card-title animate-fadein">Financial & Management Consulting</h5>
                                 <p class="card-text animate-fadein-delay">Financial & Management Consulting is a service
@@ -40,8 +39,7 @@
                     </div>
                     <div class="col-md-4 service">
                         <div class="card">
-                            <img src="{{ asset('images/sop.png') }}" class="card-img-top"
-                                alt="BusinessProcessFlowChartSOP">
+                            <img src="{{ asset('images/sop.png') }}" class="card-img-top" alt="BusinessProcessFlowChartSOP">
                             <div class="card-body">
                                 <h5 class="card-title animate-fadein">Business Process FlowChart SOP</h5>
                                 <p class="card-text animate-fadein-delay">A SOP Business Process FlowChart is a visual
@@ -55,8 +53,7 @@
                     </div>
                     <div class="col-md-4 service">
                         <div class="card">
-                            <img src="{{ asset('images/report.png') }}" class="card-img-top"
-                                alt="FinancialReportTemplate">
+                            <img src="{{ asset('images/report.png') }}" class="card-img-top" alt="FinancialReportTemplate">
                             <div class="card-body">
                                 <h5 class="card-title animate-fadein">Financial Report Template</h5>
                                 <p class="card-text animate-fadein-delay">A Financial Report Template is a tool used
@@ -72,7 +69,7 @@
             </div>
         </section>
 
-        @include('layouts.partials.footer')
+        @include('layouts.partials.footercust')
     </main>
 </body>
 

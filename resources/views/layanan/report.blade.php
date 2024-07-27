@@ -14,7 +14,7 @@
 </head>
 
 <body>
-    @include('layouts.partials.header')
+    @include('layouts.partials.headercust')
     <main>
         <div class="hero-section">
             <div class="hero-text">
@@ -40,19 +40,16 @@
                     the reporting process, ensures accuracy, and supports
                     effective decision-making by providing clear financial insights.
                 </p>
-                <button type="button" class="btn-button animate-zoomin" data-bs-toggle="modal"
-                    data-bs-target="#exampleModal">
+                <button type="button" class="btn-button animate-zoomin" data-bs-toggle="modal" data-bs-target="#exampleModal">
                     Select Package
                 </button>
-                <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel"
-                    aria-hidden="true">
+                <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
                     <div class="modal-dialog">
                         <div class="modal-content">
                             <div class="modal-header">
                                 <h5 class="modal-title" id="exampleModalLabel">Financial Report Template Package
                                 </h5>
-                                <button type="button" class="btn-close" data-bs-dismiss="modal"
-                                    aria-label="Close"></button>
+                                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                             </div>
                             <div class="modal-body">
                                 <form id="reportform">
@@ -93,7 +90,7 @@
             </div>
         </div>
     </main>
-    @include('layouts.partials.footer')
+    @include('layouts.partials.footercust')
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
     <script>
         document.getElementById('package').addEventListener('change', function() {
