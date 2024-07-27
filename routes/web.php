@@ -1,6 +1,8 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\TransactionController;
+use App\Http\Controllers\Admin\TransactionAdminController;
 
 /*
 |--------------------------------------------------------------------------
@@ -13,12 +15,16 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
+Route::get('/home', function () {
+    return view('home');
+})->name('home');
+
 Route::get('/', function () {
     return view('home');
 });
 Route::group(['middleware' => ['auth:sanctum', 'verified']], function () {
     Route::get('/dashboard', function () {
-        return view('home');
+        return view('dashboard');
     })->name('dashboard');
     Route::group(['prefix' => 'components', 'as' => 'components.'], function () {
         Route::get('/alert', function () {
@@ -44,3 +50,23 @@ Route::get('/report', function () {
 Route::get('/pembayaran', function () {
     return view('layanan.pembayaran');
 })->name('pembayaran');
+Route::get('/bank-transfer-info', function () {
+    return view('layanan.bank-transfer-info');
+})->name('bank-transfer-info');
+
+Route::post('/store-payment-proof', [TransactionController::class, 'storePaymentProof'])->name('store.payment.proof');
+
+
+
+
+
+Route::prefix('admin')->group(function () {
+    Route::get('/transactions', [TransactionAdminController::class, 'index'])->name('admin.transactions.index');
+    Route::post('/transactions/store', [TransactionAdminController::class, 'store'])->name('admin.transactions.store');
+    Route::put('/transactions/{transaction}', [TransactionAdminController::class, 'update'])->name('admin.transactions.update');
+    Route::delete('/transactions/{transaction}', [TransactionAdminController::class, 'destroy'])->name('admin.transactions.destroy');
+    // Tambahkan route lain sesuai kebutuhan
+});
+
+
+Route::post('/admin/transactions/update-status', [TransactionAdminController::class, 'updateStatus'])->name('admin.transactions.update-status');

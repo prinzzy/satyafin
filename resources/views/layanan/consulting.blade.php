@@ -14,7 +14,7 @@
 </head>
 
 <body>
-    @include('layouts.partials.header')
+    @include('layouts.partials.headercust')
     <main>
         <div class="hero-section">
             <div class="hero-text">
@@ -35,21 +35,18 @@
                     informed decisions, optimize their operations, and achieve sustainable
                     growth. With our comprehensive consulting services, we provide the
                     expertise and support needed to navigate the complexities of
-                    financial and managerial challenges.
+                    financial and managerial challenges.
                 </p>
-                <button type="button" class="btn-button animate-zoomin" data-bs-toggle="modal"
-                    data-bs-target="#exampleModal">
+                <button type="button" class="btn-button animate-zoomin" data-bs-toggle="modal" data-bs-target="#exampleModal">
                     Select Package
                 </button>
-                <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel"
-                    aria-hidden="true">
+                <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
                     <div class="modal-dialog">
                         <div class="modal-content">
                             <div class="modal-header">
                                 <h5 class="modal-title" id="exampleModalLabel">Financial & Management Consulting Package
                                 </h5>
-                                <button type="button" class="btn-close" data-bs-dismiss="modal"
-                                    aria-label="Close"></button>
+                                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                             </div>
                             <div class="modal-body">
                                 <form id="consultingform">
@@ -78,6 +75,10 @@
                                         <label for="phone" class="form-label">Phone Number</label>
                                         <input type="tel" class="form-control" id="phone" required>
                                     </div>
+                                    <div class="mb-3">
+                                        <label for="notes" class="form-label">Catatan (optional)</label>
+                                        <textarea class="form-control" id="notes" rows="3"></textarea>
+                                    </div>
                                     <button type="submit" class="btn-button">Submit</button>
                                 </form>
                             </div>
@@ -85,12 +86,11 @@
                     </div>
                 </div>
             </div>
-            <div class="image animate-zoomin"><img src="{{ asset('images/consulting3.png') }}"
-                    alt="financialconsulting">
+            <div class="image animate-zoomin"><img src="{{ asset('images/consulting3.png') }}" alt="financialconsulting">
             </div>
         </div>
     </main>
-    @include('layouts.partials.footer')
+    @include('layouts.partials.footercust')
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
     <script>
         document.getElementById('package').addEventListener('change', function() {
@@ -117,28 +117,31 @@
 
         document.getElementById('consultingform').addEventListener('submit', function(event) {
             event.preventDefault();
-            // Validasi form jika diperlukan
-            if (this.checkValidity()) {
-                // Ambil nilai dari form
-                const packageName = document.getElementById('package').value;
-                const price = document.getElementById('price').value;
-                const name = document.getElementById('name').value;
-                const email = document.getElementById('email').value;
-                const phone = document.getElementById('phone').value;
+            // Ambil nilai dari form
+            const packageName = document.getElementById('package').value;
+            const price = document.getElementById('price').value;
+            const name = document.getElementById('name').value;
+            const email = document.getElementById('email').value;
+            const phone = document.getElementById('phone').value;
+            const notes = document.getElementById('notes').value; // Ambil nilai Catatan
 
-                const packageMap = {
-                    'paket1': '3x Consultations',
-                    'paket2': '5x Consultations',
-                    'paket3': '10x Consultations'
-                }
-
-                // Buat URL dengan query parameters
-                const paymentUrl =
-                    `{{ route('pembayaran') }}?package=${encodeURIComponent(packageMap[packageName])}&price=${encodeURIComponent(price)}&name=${encodeURIComponent(name)}&email=${encodeURIComponent(email)}&phone=${encodeURIComponent(phone)}`;
-
-                // Arahkan ke halaman pembayaran
-                window.location.href = paymentUrl;
+            const packageMap = {
+                'paket1': '3x Consultations',
+                'paket2': '5x Consultations',
+                'paket3': '10x Consultations'
             }
+
+            // Buat URL dengan query parameters
+            let paymentUrl =
+                `{{ route('pembayaran') }}?package=${encodeURIComponent(packageMap[packageName])}&price=${encodeURIComponent(price)}&name=${encodeURIComponent(name)}&email=${encodeURIComponent(email)}&phone=${encodeURIComponent(phone)}`;
+
+            // Sertakan Catatan jika ada nilai yang dimasukkan
+            if (notes.trim() !== '') {
+                paymentUrl += `&notes=${encodeURIComponent(notes)}`;
+            }
+
+            // Arahkan ke halaman pembayaran
+            window.location.href = paymentUrl;
         });
     </script>
 </body>

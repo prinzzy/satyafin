@@ -22,10 +22,14 @@ html {
 }
 
 .hero-text h1 {
+    width: 100%;
     font-size: 3rem;
     margin: 10px;
     margin-top: 100px;
     font-family: "Monserrat", sans-serif;
+    white-space: nowrap; /* Prevents the text from wrapping to the next line */
+    overflow: hidden; /* Hides the overflowed text */
+    text-overflow: ellipsis; /* Adds an ellipsis (...) at the end if the text is too long */
 }
 
 .hero-text p {

@@ -15,18 +15,26 @@
         </div>
     </x-slot>
 
-    
     <section class="section">
-        <div class="card">
-            <div class="card-header">
-                <h4 class="card-title">Example Content</h4>
+        <div class="row">
+            <div class="col-12 col-md-6 col-lg-4">
+                <div class="card text-white bg-primary mb-3 custom-card">
+                    <div class="card-body">
+                        <h5 class="card-title">Transactions</h5>
+                        <p class="card-text">Manage all transactions here.</p>
+                        <a href="{{ route('admin.transactions.index') }}" class="btn btn-light">Go to Transactions</a>
+                    </div>
+                </div>
             </div>
-            <div class="card-body">
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Consectetur quas omnis
-                laudantium tempore
-                exercitationem, expedita aspernatur sed officia asperiores unde tempora maxime odio
-                reprehenderit
-                distinctio incidunt! Vel aspernatur dicta consequatur!
+        </div>
+
+        <div class="row">
+            <div class="col-12">
+                <div class="card">
+                    <div class="card-body">
+                        <canvas id="transactionsChart"></canvas>
+                    </div>
+                </div>
             </div>
         </div>
     </section>

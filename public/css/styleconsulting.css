@@ -201,3 +201,84 @@ input[type="file"] {
     cursor: pointer;
     margin-top: 10px;
 }
+
+
+
+/* Pembayaran */
+.container-card {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        .custom-card {
+            max-width: 600px;
+            width: 100%;
+        }
+
+        .card-body {
+            padding: 30px;
+        }
+
+        .details-group {
+            margin-bottom: 15px;
+        }
+
+        .card-title {
+            margin-bottom: 15px;
+        }
+
+        .form-check-label {
+            cursor: default;
+            vertical-align: middle;
+            margin-bottom: 0;
+        }
+
+        #grandTotal {
+            font-size: 24px;
+            font-weight: bold;
+        }
+
+        .upload-section {
+            margin-top: 30px;
+        }
+
+        .custom-alert {
+            display: none;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: rgba(0, 0, 0, 0.5);
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 9999;
+        }
+
+        .custom-alert p {
+            background-color: white;
+            padding: 20px;
+            border-radius: 10px;
+            text-align: center;
+        }
+
+        .custom-alert button {
+            margin-top: 20px;
+        }
+
+         .form-check {
+            display: flex;
+            align-items: center;
+            justify-content: flex-start; /* Align start */
+            margin-left: 1.5rem; /* Adjusted margin for alignment */
+        }
+
+        .form-check-input {
+            margin-right: 0.5rem;
+        }
+
+        .details-group {
+            margin-bottom: 1rem;
+        }

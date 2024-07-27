@@ -654,6 +654,21 @@ d@^1.0.1, d@1:
     es5-ext "^0.10.50"
     type "^1.0.1"
 
+datatables.net-bs5@^2.0.8:
+  version "2.0.8"
+  resolved "https://registry.npmjs.org/datatables.net-bs5/-/datatables.net-bs5-2.0.8.tgz"
+  integrity sha512-rpz/yO2NZMP1Uso/sSsaFAKwdCjYPa1/KLxAVr0JNJJV9ygFLHcuKTcNmoc1cekcsjYcGyybWKaNu4NfpZ74vg==
+  dependencies:
+    datatables.net "2.0.8"
+    jquery ">=1.7"
+
+datatables.net@2.0.8:
+  version "2.0.8"
+  resolved "https://registry.npmjs.org/datatables.net/-/datatables.net-2.0.8.tgz"
+  integrity sha512-4/2dYx4vl975zQqZbyoVEm0huPe61qffjBRby7K7V+y9E+ORq4R8KavkgrNMmIgO6cl85Pg4AvCbVjvPCIT1Yg==
+  dependencies:
+    jquery ">=1.7"
+
 decode-uri-component@^0.2.0:
   version "0.2.2"
   resolved "https://registry.npmjs.org/decode-uri-component/-/decode-uri-component-0.2.2.tgz"
@@ -1071,6 +1086,11 @@ jest-worker@^27.4.5:
     "@types/node" "*"
     merge-stream "^2.0.0"
     supports-color "^8.0.0"
+
+jquery@>=1.7:
+  version "3.7.1"
+  resolved "https://registry.npmjs.org/jquery/-/jquery-3.7.1.tgz"
+  integrity sha512-m4avr8yL8kmFN8psrbFFFmB/If14iN5o9nw/NgnnM+kybDJpRsAynV2BsfpTYrTRysYUdADVD7CkUUizgkpLfg==
 
 js-tokens@^4.0.0:
   version "4.0.0"
