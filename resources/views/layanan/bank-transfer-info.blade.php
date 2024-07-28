@@ -47,17 +47,15 @@
                     </div>
 
                     <!-- Button to open upload proof modal -->
-                    <button type="button" class="btn btn-primary mt-3" data-bs-toggle="modal"
-                        data-bs-target="#uploadProofModal">
-                        Submit
+                    <button type="button" class="btn btn-primary mt-3" data-bs-toggle="modal" data-bs-target="#uploadProofModal">
+                        Already Transfer
                     </button>
                 </div>
             </div>
         </div>
 
         <!-- Upload Proof Modal -->
-        <div class="modal fade" id="uploadProofModal" tabindex="-1" aria-labelledby="uploadProofModalLabel"
-            aria-hidden="true">
+        <div class="modal fade" id="uploadProofModal" tabindex="-1" aria-labelledby="uploadProofModalLabel" aria-hidden="true">
             <div class="modal-dialog">
                 <div class="modal-content">
                     <div class="modal-header">
@@ -68,8 +66,7 @@
                         <form id="uploadProofForm" enctype="multipart/form-data">
                             <div class="mb-3">
                                 <label for="paymentProof" class="form-label">Select proof of transfer file:</label>
-                                <input type="file" class="form-control" id="paymentProof" name="paymentProof"
-                                    required>
+                                <input type="file" class="form-control" id="paymentProof" name="paymentProof" required>
                                 <input type="hidden" name="package" value="{{ request('package') }}">
                                 <input type="hidden" name="price" value="{{ request('price') }}">
                                 <input type="hidden" name="product" value="{{ request('product') }}">

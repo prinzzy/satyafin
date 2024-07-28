@@ -19,6 +19,7 @@ class TransactionAdminController extends Controller
     {
         // Validasi input jika diperlukan
         $request->validate([
+            'product' => 'required',
             'package' => 'required',
             'price' => 'required',
             'name' => 'required',
@@ -39,6 +40,7 @@ class TransactionAdminController extends Controller
 
         // Simpan data transaksi baru
         Transaction::create([
+            'product' => $request->product,
             'package' => $request->package,
             'price' => $this->formatCurrencyToDecimal($request->price),
             'name' => $request->name,
@@ -56,6 +58,7 @@ class TransactionAdminController extends Controller
     {
         // Validasi input jika diperlukan
         $request->validate([
+            'product' => 'required',
             'package' => 'required',
             'price' => 'required',
             'name' => 'required',
@@ -78,6 +81,7 @@ class TransactionAdminController extends Controller
             }
 
             $transaction->update([
+                'product' => $request->product,
                 'package' => $request->package,
                 'price' => $this->formatCurrencyToDecimal($request->price),
                 'name' => $request->name,
@@ -90,6 +94,7 @@ class TransactionAdminController extends Controller
         } else {
             // Jika tidak ada file bukti baru, update data transaksi tanpa mengubah bukti
             $transaction->update([
+                'product' => $request->product,
                 'package' => $request->package,
                 'price' => $this->formatCurrencyToDecimal($request->price),
                 'name' => $request->name,

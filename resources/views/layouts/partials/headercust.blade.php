@@ -26,9 +26,9 @@
                         <li class="nav-item">
                             <a class="nav-link {{ request()->routeIs('home') ? 'active' : '' }}" aria-current="page" href="{{ route('home') }}">Home</a>
                         </li>
-                        <li class="nav-item">
+                        <!-- <li class="nav-item">
                             <a class="nav-link" href="#">About Us</a>
-                        </li>
+                        </li> -->
                         <li class="nav-item dropdown ">
                             <a class="nav-link dropdown-toggle {{ request()->is('layanan*') || request()->routeIs('consulting') || request()->routeIs('flowchart') || request()->routeIs('report') ? 'active' : '' }}" href="{{ route('layanan') }}" id="servicesDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                                 Services
@@ -46,9 +46,9 @@
                                 <li><a class="dropdown-item" href="{{ route('layanan') }}">All Services</a></li>
                             </ul>
                         </li>
-                        <li class="nav-item">
+                        <!-- <li class="nav-item">
                             <a class="nav-link" href="#">Career</a>
-                        </li>
+                        </li> -->
                     </ul>
                 </div>
                 <div class="d-flex">

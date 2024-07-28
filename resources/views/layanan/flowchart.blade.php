@@ -33,26 +33,22 @@
                     executing tasks, enabling employees to understand and follow
                     the process accurately.
                 </p>
-                <button type="button" class="btn-button animate-zoomin" data-bs-toggle="modal"
-                    data-bs-target="#exampleModal">
+                <button type="button" class="btn-button animate-zoomin" data-bs-toggle="modal" data-bs-target="#exampleModal">
                     Select Package
                 </button>
-                <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel"
-                    aria-hidden="true">
+                <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
                     <div class="modal-dialog">
                         <div class="modal-content">
                             <div class="modal-header">
                                 <h5 class="modal-title" id="exampleModalLabel">Business Process FlowChart SOP Package
                                 </h5>
-                                <button type="button" class="btn-close" data-bs-dismiss="modal"
-                                    aria-label="Close"></button>
+                                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                             </div>
                             <div class="modal-body">
                                 <form id="sopform">
                                     <div class="mb-3">
                                         <label for="name" class="form-label">Product</label>
-                                        <input type="text" class="form-control"
-                                            value="Business Process FlowChart SOP" id="product" readonly>
+                                        <input type="text" class="form-control" value="Business Process FlowChart SOP" id="product" readonly>
                                     </div>
                                     <div class="mb-3">
                                         <label for="package" class="form-label">Select Package</label>
@@ -133,6 +129,7 @@
                 const name = document.getElementById('name').value;
                 const email = document.getElementById('email').value;
                 const phone = document.getElementById('phone').value;
+                const notes = document.getElementById('notes').value;
 
                 const packageMap = {
                     'paket1': 'Retail Company',
@@ -142,9 +139,13 @@
                 }
 
                 // Buat URL dengan query parameters
-                const paymentUrl =
+                let paymentUrl =
                     `{{ route('pembayaran') }}?product=${encodeURIComponent(product)}&package=${encodeURIComponent(packageMap[packageName])}&price=${encodeURIComponent(price)}&name=${encodeURIComponent(name)}&email=${encodeURIComponent(email)}&phone=${encodeURIComponent(phone)}`;
 
+                // Sertakan Catatan jika ada nilai yang dimasukkan
+                if (notes.trim() !== '') {
+                    paymentUrl += `&notes=${encodeURIComponent(notes)}`;
+                }
                 // Arahkan ke halaman pembayaran
                 window.location.href = paymentUrl;
             }
